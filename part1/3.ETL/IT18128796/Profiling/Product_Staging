@@ -1,0 +1,504 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{EE58FFD7-A102-4A24-9310-CA05588B6233}" Name="Customer_Staging">
+      <DtsConnectionManagerID>Customer_Staging</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}" Name="DESKTOP-HUUS7AP\SQLEXPRESSS.IT18128796_Staging">
+      <DtsConnectionManagerID>DESKTOP-HUUS7AP\SQLEXPRESSS.IT18128796_Staging</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{1F18F747-B37A-4589-B4A1-8AA4D6F54A6C}" Name="Order_Staging">
+      <DtsConnectionManagerID>Order_Staging</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{51C6E012-E50B-4E16-85B3-191283806602}" Name="Product_Staging">
+      <DtsConnectionManagerID>Product_Staging</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table Schema="dbo" Table="Product_Staging" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table Schema="dbo" Table="Product_Staging" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table Schema="dbo" Table="Product_Staging" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table Schema="dbo" Table="Product_Staging" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <ColumnPatternProfileRequest ID="PatternReq">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table Schema="dbo" Table="Product_Staging" />
+        <Column IsWildCard="true" />
+        <MaxNumberOfPatterns>10</MaxNumberOfPatterns>
+        <PercentageDataCoverageDesired>95</PercentageDataCoverageDesired>
+        <CaseSensitive>false</CaseSensitive>
+        <Delimiters> \t\r\n</Delimiters>
+        <Symbols>,.;:-"'`~=&amp;/\\@!?()&lt;&gt;[]{}|#*^%</Symbols>
+        <TagTableName />
+      </ColumnPatternProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table Schema="dbo" Table="Product_Staging" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <FunctionalDependencyProfileRequest ID="FDReq">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table Schema="dbo" Table="Product_Staging" />
+        <DeterminantColumns>
+          <Column IsWildCard="true" />
+        </DeterminantColumns>
+        <DependentColumn IsWildCard="true" />
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <FDStrengthThreshold>0.95</FDStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </FunctionalDependencyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <Column Name="PRODUCT_ID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <Column Name="PRODUCT_NAME" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <Column Name="PRICE" SqlDbType="Real" MaxLength="0" Precision="24" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <Column Name="FAMILY" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <Column Name="PRODUCT_ID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>17</MaxValue>
+        <Mean>8.5625</Mean>
+        <StdDev>4.71657648618148</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <Column Name="PRICE" SqlDbType="Real" MaxLength="0" Precision="24" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2</MinValue>
+        <MaxValue>120</MaxValue>
+        <Mean>45.5</Mean>
+        <StdDev>39.7161805817226</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <Column Name="PRODUCT_NAME" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>5</MinLength>
+        <MaxLength>20</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>5</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>7</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>12</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>14</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <Column Name="FAMILY" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>6</MinLength>
+        <MaxLength>10</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>7</Length>
+            <Count>6</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <KeyColumns>
+          <Column Name="PRODUCT_ID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <Column Name="PRODUCT_ID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>16</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>9</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>12</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>13</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>17</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <KeyColumns>
+          <Column Name="PRODUCT_NAME" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <Column Name="PRODUCT_NAME" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>16</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Bottle Opener</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Earrings</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>French Choucroute</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Gold Bracelet</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Gold Watch</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Green Sweetshirt</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Keyring</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Red Sweetshirt</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Silver Collar</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Silver Watch</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sport Updatedd Shoes</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sunglasses</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Tennis Balls</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Tennis Racket</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Towel</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>White Sweetshirt</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <Column Name="FAMILY" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>5</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Equipment</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jewels</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sportswear</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Various</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Watches</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="true">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <Column Name="PRODUCT_NAME" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>SUNGLASSES</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>EARRINGS</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>FRENCH CHOUCROUTE</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>KEYRING</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>GREEN SWEETSHIRT</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>WHITE SWEETSHIRT</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>RED SWEETSHIRT</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>SPORT UPDATEDD SHOES</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>GOLD BRACELET</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>.*</RegexText>
+            <Frequency>44</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="true">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <Column Name="FAMILY" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>SPORTSWEAR</RegexText>
+            <Frequency>25</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>VARIOUS</RegexText>
+            <Frequency>25</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>EQUIPMENT</RegexText>
+            <Frequency>19</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>JEWELS</RegexText>
+            <Frequency>19</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>WATCHES</RegexText>
+            <Frequency>12</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <DeterminantColumns>
+          <Column Name="PRODUCT_NAME" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="FAMILY" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <DeterminantColumns>
+          <Column Name="PRODUCT_ID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="FAMILY" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <DeterminantColumns>
+          <Column Name="PRODUCT_ID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="PRODUCT_NAME" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{F225E320-6EEF-4E6C-98F0-5D75BC3C9D10}</DataSourceID>
+        <Table DataSource="DESKTOP-HUUS7AP\SQLEXPRESSS" Database="IT18128796_Staging" Schema="dbo" Table="Product_Staging" RowCount="16" />
+        <DeterminantColumns>
+          <Column Name="PRODUCT_NAME" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="PRODUCT_ID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>

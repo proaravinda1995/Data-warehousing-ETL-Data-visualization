@@ -1,0 +1,17 @@
+PRODUCT_ID	PRODUCT_NAME	FAMILY
+1	Gold Watch	Watches
+2	Silver Watch	Watches
+3	Earrings	Jewels
+4	Gold Bracelet	Jewels
+5	Silver Collar	Jewels
+6	Green Sweetshirt	Sportswear
+7	Red Sweetshirt	Sportswear
+8	White Sweetshirt	Sportswear
+9	Sport Updatedd Shoes	Sportswear
+10	Tennis Racket	Equipment
+11	Tennis Balls	Equipment
+12	Sunglasses	Equipment
+13	Keyring	Various
+14	Towel	Various
+15	French Choucroute	Various
+17	Bottle Opener	Various

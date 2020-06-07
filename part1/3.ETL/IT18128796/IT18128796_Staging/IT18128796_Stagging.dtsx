@@ -1,0 +1,2179 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/26/2020 3:56:15 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-HUUS7AP"
+  DTS:CreatorName="DESKTOP-HUUS7AP\Aravinda"
+  DTS:DTSID="{DB83F58F-82D3-44C2-806C-BDFC9AB47848}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.68"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IT18128796_Stagging"
+  DTS:PackageType="5"
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{6AC531A8-02C8-4FC7-B9AE-50D43219B401}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Address]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{502693F0-1C36-4190-AA9B-9856E1D9DC47}"
+      DTS:ObjectName="Address">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\SLIIT\3rd year\Assignment\DWBI\ETL Offload\2. Prepaired Files\AREA.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Cutomer_Detail]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3A30B91F-E999-4E78-B977-51D0465E6124}"
+      DTS:ObjectName="Cutomer_Detail">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\SLIIT\3rd year\Assignment\DWBI\ETL Offload\2. Prepaired Files\Customer.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CUSTOMER_ID"
+              DTS:DTSID="{3CB0D711-D51D-46CF-B625-3A7BDC6E5D45}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIRST_NAME"
+              DTS:DTSID="{90D033C1-9DF8-41FD-8296-683722900E2E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LAST_NAME"
+              DTS:DTSID="{CB9C9B13-9921-42C3-8E3D-4F7DCF803DC2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-HUUS7AP\SQLEXPRESSS.IT18128796_Staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6B30BC25-66B6-462E-B1A4-A6E494961C64}"
+      DTS:ObjectName="DESKTOP-HUUS7AP\SQLEXPRESSS.IT18128796_Staging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-HUUS7AP\SQLEXPRESSS;Initial Catalog=IT18128796_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Order_Detail]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{7B92E473-002D-48E6-A304-B201B0D3ED44}"
+      DTS:ObjectName="Order_Detail">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\SLIIT\3rd year\Assignment\DWBI\ETL Offload\2. Prepaired Files\Order.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Product_Detail]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9C464FA2-9265-48C9-98FA-4DD1197987C5}"
+      DTS:ObjectName="Product_Detail">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\SLIIT\3rd year\Assignment\DWBI\ETL Offload\2. Prepaired Files\Product.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRODUCT_ID"
+              DTS:DTSID="{63725420-E72B-43DC-8839-1CCF8CCD3F37}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRODUCT_NAME"
+              DTS:DTSID="{DBA5C6E5-EFFC-4F6C-B0C0-8422DC8DB4DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FAMILY"
+              DTS:DTSID="{B6DC1E75-A8A6-4DB3-8D99-20664C277872}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Customer_Address_Stagging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{9317D285-E5AD-4668-89F9-B9709896328C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Customer_Address_Stagging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Customer_Address_Stagging.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{D99CFCEE-E6FF-4244-AC68-8AD1E0AC2B66}"
+          DTS:EventID="1845520640"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{C340B974-3D79-4389-95C2-3600430A3A82}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Customer_Address_Stagging.EventHandlers[OnPreExecute]\Customer_Address_SQL_Task"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{ECB151EA-A521-40AC-8052-3900711F2498}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Customer_Address_SQL_Task">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{6B30BC25-66B6-462E-B1A4-A6E494961C64}"
+                  SQLTask:SqlStatementSource="truncate table [IT18128796_Staging].[dbo].[Customer_Address_Stagging]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Customer_Address_Stagging\Customer_Address_Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Customer_Address_Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Customer_Address_Stagging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Customer_Address_Stagging\Customer_Address_Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-HUUS7AP\SQLEXPRESSS.IT18128796_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-HUUS7AP\SQLEXPRESSS.IT18128796_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Customer_Address_Stagging\Customer_Address_Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Destination.Inputs[OLE DB Destination Input].Columns[CUSTOMER_ID]"
+                      cachedDataType="r8"
+                      cachedName="CUSTOMER_ID"
+                      externalMetadataColumnId="Package\Customer_Address_Stagging\Customer_Address_Destination.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output].Columns[CUSTOMER_ID]" />
+                    <inputColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Destination.Inputs[OLE DB Destination Input].Columns[REGION]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="REGION"
+                      externalMetadataColumnId="Package\Customer_Address_Stagging\Customer_Address_Destination.Inputs[OLE DB Destination Input].ExternalColumns[REGION]"
+                      lineageId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output].Columns[REGION]" />
+                    <inputColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Destination.Inputs[OLE DB Destination Input].Columns[CITY]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CITY"
+                      externalMetadataColumnId="Package\Customer_Address_Stagging\Customer_Address_Destination.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
+                      lineageId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output].Columns[CITY]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Destination.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
+                      dataType="i4"
+                      name="CUSTOMER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Destination.Inputs[OLE DB Destination Input].ExternalColumns[REGION]"
+                      dataType="wstr"
+                      length="255"
+                      name="REGION" />
+                    <externalMetadataColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Destination.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      name="CITY" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Customer_Address_Stagging\Customer_Address_Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Customer_Address_Stagging\Customer_Address_Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Customer_Address_Stagging\Customer_Address_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Customer_Address_Stagging\Customer_Address_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Customer_Address_Stagging\Customer_Address_Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Customer_Address_Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Customer_Address_Stagging\Customer_Address_Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Address]"
+                  connectionManagerRefId="Package.ConnectionManagers[Address]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output].Columns[CUSTOMER_ID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output].Columns[REGION]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output].ExternalColumns[REGION]"
+                      length="255"
+                      lineageId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output].Columns[REGION]"
+                      name="REGION"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output].Columns[CITY]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output].ExternalColumns[CITY]"
+                      length="255"
+                      lineageId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output].Columns[CITY]"
+                      name="CITY"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output].ExternalColumns[CUSTOMER_ID]"
+                      dataType="r8"
+                      name="CUSTOMER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output].ExternalColumns[REGION]"
+                      dataType="wstr"
+                      length="255"
+                      name="REGION" />
+                    <externalMetadataColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output].ExternalColumns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      name="CITY" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Error Output].Columns[CUSTOMER_ID]"
+                      dataType="r8"
+                      lineageId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Error Output].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID" />
+                    <outputColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Error Output].Columns[REGION]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Error Output].Columns[REGION]"
+                      name="REGION" />
+                    <outputColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Error Output].Columns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Error Output].Columns[CITY]"
+                      name="CITY" />
+                    <outputColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Customer_Address_Stagging.Paths[Excel Source Output]"
+              endId="Package\Customer_Address_Stagging\Customer_Address_Destination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Customer_Address_Stagging\Customer_Address_Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Customer_Detail_Stagging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F0E20630-8258-4277-B7FE-6F4091C81B51}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Customer_Detail_Stagging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Customer_Detail_Stagging.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{6D8A288A-8C40-4D43-9050-008CB3EEBBD4}"
+          DTS:EventID="-1"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{B5AED157-2069-4309-9A7B-37ABC7B60F2B}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Customer_Detail_Stagging.EventHandlers[OnPreExecute]\Execute SQL Task"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{71EE6D5A-E72E-49EB-B58A-A44035900CA2}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute SQL Task">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{6B30BC25-66B6-462E-B1A4-A6E494961C64}"
+                  SQLTask:SqlStatementSource="truncate table [IT18128796_Staging].[dbo].[Customer_Detail_Stagging]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Customer_Detail_Stagging\Customer_Detail Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Customer_Detail Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Customer_Detail_Stagging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-HUUS7AP\SQLEXPRESSS.IT18128796_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-HUUS7AP\SQLEXPRESSS.IT18128796_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Inputs[OLE DB Destination Input].Columns[CUSTOMER_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CUSTOMER_ID"
+                      externalMetadataColumnId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output].Columns[CUSTOMER_ID]" />
+                    <inputColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Inputs[OLE DB Destination Input].Columns[FIRST_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FIRST_NAME"
+                      externalMetadataColumnId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Inputs[OLE DB Destination Input].ExternalColumns[FIRST_NAME]"
+                      lineageId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output].Columns[FIRST_NAME]" />
+                    <inputColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Inputs[OLE DB Destination Input].Columns[LAST_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LAST_NAME"
+                      externalMetadataColumnId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Inputs[OLE DB Destination Input].ExternalColumns[LAST_NAME]"
+                      lineageId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output].Columns[LAST_NAME]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
+                      dataType="i4"
+                      name="CUSTOMER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Inputs[OLE DB Destination Input].ExternalColumns[FIRST_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="FIRST_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Inputs[OLE DB Destination Input].ExternalColumns[LAST_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="LAST_NAME" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Customer_Detail_Stagging\Customer_Detail File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Customer_Detail File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Cutomer_Detail]"
+                  connectionManagerRefId="Package.ConnectionManagers[Cutomer_Detail]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output].Columns[CUSTOMER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output].ExternalColumns[CUSTOMER_ID]"
+                      length="50"
+                      lineageId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output].Columns[FIRST_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output].ExternalColumns[FIRST_NAME]"
+                      length="50"
+                      lineageId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output].Columns[FIRST_NAME]"
+                      name="FIRST_NAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output].Columns[LAST_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output].ExternalColumns[LAST_NAME]"
+                      length="50"
+                      lineageId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output].Columns[LAST_NAME]"
+                      name="LAST_NAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output].ExternalColumns[CUSTOMER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CUSTOMER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output].ExternalColumns[FIRST_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FIRST_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output].ExternalColumns[LAST_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LAST_NAME" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Customer_Detail_Stagging.Paths[Flat File Source Output]"
+              endId="Package\Customer_Detail_Stagging\Customer_Detail Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Customer_Detail_Stagging\Customer_Detail File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute Tranformation Task"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{00D3AF9D-8698-4E1B-BCD8-B780916DF666}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute Tranformation Task"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>IT18128796_Transforming.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Order_Detail_Stagging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{FDDCD8B4-5076-43E9-AFE7-84A75CC47AB5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Order_Detail_Stagging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Order_Detail_Stagging.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{5A21EF13-FB20-407D-9B39-D18D5252EDEF}"
+          DTS:EventID="1845520640"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{4795264C-CED4-40DD-B44A-3CE549D71253}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Order_Detail_Stagging.EventHandlers[OnPreExecute]\Order_Detail_SQL"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{EE949FFB-0034-44DB-9021-82F42828CC23}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Order_Detail_SQL">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{6B30BC25-66B6-462E-B1A4-A6E494961C64}"
+                  SQLTask:SqlStatementSource="truncate table [IT18128796_Staging].[dbo].[Order_Detail_Stagging]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Order_Detail_Stagging\Order_Detail_Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Order_Detail_Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Order_Detail_Stagging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-HUUS7AP\SQLEXPRESSS.IT18128796_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-HUUS7AP\SQLEXPRESSS.IT18128796_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].Columns[ORDER_ID]"
+                      cachedDataType="r8"
+                      cachedName="ORDER_ID"
+                      externalMetadataColumnId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_ID]"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[ORDER_ID]" />
+                    <inputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].Columns[CUSTOMER_ID]"
+                      cachedDataType="r8"
+                      cachedName="CUSTOMER_ID"
+                      externalMetadataColumnId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[CUSTOMER_ID]" />
+                    <inputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].Columns[ORDER_DATE]"
+                      cachedDataType="date"
+                      cachedName="ORDER_DATE"
+                      externalMetadataColumnId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_DATE]"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[ORDER_DATE]" />
+                    <inputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].Columns[PRODUCT_ID]"
+                      cachedDataType="r8"
+                      cachedName="PRODUCT_ID"
+                      externalMetadataColumnId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_ID]"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[PRODUCT_ID]" />
+                    <inputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].Columns[UNIT_PRICE]"
+                      cachedDataType="r8"
+                      cachedName="UNIT_PRICE"
+                      externalMetadataColumnId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[UNIT_PRICE]"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[UNIT_PRICE]" />
+                    <inputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].Columns[QTY]"
+                      cachedDataType="r8"
+                      cachedName="QTY"
+                      externalMetadataColumnId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[QTY]"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[QTY]" />
+                    <inputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].Columns[AMOUNT]"
+                      cachedDataType="r8"
+                      cachedName="AMOUNT"
+                      externalMetadataColumnId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[AMOUNT]"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[AMOUNT]" />
+                    <inputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].Columns[ORDER_LINE_NUMBER]"
+                      cachedDataType="r8"
+                      cachedName="ORDER_LINE_NUMBER"
+                      externalMetadataColumnId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_LINE_NUMBER]"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[ORDER_LINE_NUMBER]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_ID]"
+                      dataType="i4"
+                      name="ORDER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
+                      dataType="i4"
+                      name="CUSTOMER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_DATE]"
+                      dataType="dbTimeStamp"
+                      name="ORDER_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_ID]"
+                      dataType="i4"
+                      name="PRODUCT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[UNIT_PRICE]"
+                      dataType="r8"
+                      name="UNIT_PRICE" />
+                    <externalMetadataColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[QTY]"
+                      dataType="i4"
+                      name="QTY" />
+                    <externalMetadataColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[AMOUNT]"
+                      dataType="r8"
+                      name="AMOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_LINE_NUMBER]"
+                      dataType="i4"
+                      name="ORDER_LINE_NUMBER" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Order_Detail_Stagging\Order_Detail_Stagging"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Order_Detail_Stagging"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">ORDERS_FILE$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Order_Detail]"
+                  connectionManagerRefId="Package.ConnectionManagers[Order_Detail]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[ORDER_ID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].ExternalColumns[ORDER_ID]"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[ORDER_ID]"
+                      name="ORDER_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[CUSTOMER_ID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[ORDER_DATE]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].ExternalColumns[ORDER_DATE]"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[ORDER_DATE]"
+                      name="ORDER_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[PRODUCT_ID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].ExternalColumns[PRODUCT_ID]"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[PRODUCT_ID]"
+                      name="PRODUCT_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[UNIT_PRICE]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].ExternalColumns[UNIT_PRICE]"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[UNIT_PRICE]"
+                      name="UNIT_PRICE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[QTY]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].ExternalColumns[QTY]"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[QTY]"
+                      name="QTY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[AMOUNT]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].ExternalColumns[AMOUNT]"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[AMOUNT]"
+                      name="AMOUNT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[ORDER_LINE_NUMBER]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].ExternalColumns[ORDER_LINE_NUMBER]"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].Columns[ORDER_LINE_NUMBER]"
+                      name="ORDER_LINE_NUMBER"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].ExternalColumns[ORDER_ID]"
+                      dataType="r8"
+                      name="ORDER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].ExternalColumns[CUSTOMER_ID]"
+                      dataType="r8"
+                      name="CUSTOMER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].ExternalColumns[ORDER_DATE]"
+                      dataType="date"
+                      name="ORDER_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].ExternalColumns[PRODUCT_ID]"
+                      dataType="r8"
+                      name="PRODUCT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].ExternalColumns[UNIT_PRICE]"
+                      dataType="r8"
+                      name="UNIT_PRICE" />
+                    <externalMetadataColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].ExternalColumns[QTY]"
+                      dataType="r8"
+                      name="QTY" />
+                    <externalMetadataColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].ExternalColumns[AMOUNT]"
+                      dataType="r8"
+                      name="AMOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output].ExternalColumns[ORDER_LINE_NUMBER]"
+                      dataType="r8"
+                      name="ORDER_LINE_NUMBER" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[ORDER_ID]"
+                      dataType="r8"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[ORDER_ID]"
+                      name="ORDER_ID" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[CUSTOMER_ID]"
+                      dataType="r8"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[ORDER_DATE]"
+                      dataType="date"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[ORDER_DATE]"
+                      name="ORDER_DATE" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[PRODUCT_ID]"
+                      dataType="r8"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[PRODUCT_ID]"
+                      name="PRODUCT_ID" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[UNIT_PRICE]"
+                      dataType="r8"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[UNIT_PRICE]"
+                      name="UNIT_PRICE" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[QTY]"
+                      dataType="r8"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[QTY]"
+                      name="QTY" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[AMOUNT]"
+                      dataType="r8"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[AMOUNT]"
+                      name="AMOUNT" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[ORDER_LINE_NUMBER]"
+                      dataType="r8"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[ORDER_LINE_NUMBER]"
+                      name="ORDER_LINE_NUMBER" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Order_Detail_Stagging.Paths[Excel Source Output]"
+              endId="Package\Order_Detail_Stagging\Order_Detail_Destination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Order_Detail_Stagging\Order_Detail_Stagging.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Product_Detail_Stagging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{65A9B986-61C9-4AD7-A08E-3C2C79029C18}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Product_Detail_Stagging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Product_Detail_Stagging.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{03F6452B-3039-4F43-A237-7BFA19C8C00B}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{5FA9CC73-C393-491E-A584-97034805F469}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Product_Detail_Stagging.EventHandlers[OnPreExecute]\Product_Detail_SQL_Task"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{1A3EC241-2E9B-4AC4-9CB2-2045D6FC37CB}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Product_Detail_SQL_Task">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{6B30BC25-66B6-462E-B1A4-A6E494961C64}"
+                  SQLTask:SqlStatementSource="truncate table [IT18128796_Staging].[dbo].[Product_Detail_Stagging]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Product_Detail_Stagging\Product_Detail_Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Product_Detail_Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Product_Detail_Stagging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Product_Detail_Stagging\Product_Detail_Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-HUUS7AP\SQLEXPRESSS.IT18128796_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-HUUS7AP\SQLEXPRESSS.IT18128796_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Product_Detail_Stagging\Product_Detail_Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Destination.Inputs[OLE DB Destination Input].Columns[PRODUCT_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PRODUCT_ID"
+                      externalMetadataColumnId="Package\Product_Detail_Stagging\Product_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_ID]"
+                      lineageId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output].Columns[PRODUCT_ID]" />
+                    <inputColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Destination.Inputs[OLE DB Destination Input].Columns[PRODUCT_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PRODUCT_NAME"
+                      externalMetadataColumnId="Package\Product_Detail_Stagging\Product_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_NAME]"
+                      lineageId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output].Columns[PRODUCT_NAME]" />
+                    <inputColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Destination.Inputs[OLE DB Destination Input].Columns[FAMILY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FAMILY"
+                      externalMetadataColumnId="Package\Product_Detail_Stagging\Product_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[FAMILY]"
+                      lineageId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output].Columns[FAMILY]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_ID]"
+                      dataType="i4"
+                      name="PRODUCT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PRODUCT_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Destination.Inputs[OLE DB Destination Input].ExternalColumns[FAMILY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FAMILY" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Product_Detail_Stagging\Product_Detail_Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Product_Detail_Stagging\Product_Detail_Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Product_Detail_Stagging\Product_Detail_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Product_Detail_Stagging\Product_Detail_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Product_Detail_Stagging\Product_Detail_Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Product_Detail_Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Product_Detail_Stagging\Product_Detail_Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Product_Detail]"
+                  connectionManagerRefId="Package.ConnectionManagers[Product_Detail]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output].Columns[PRODUCT_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output].ExternalColumns[PRODUCT_ID]"
+                      length="50"
+                      lineageId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output].Columns[PRODUCT_ID]"
+                      name="PRODUCT_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output].Columns[PRODUCT_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output].ExternalColumns[PRODUCT_NAME]"
+                      length="50"
+                      lineageId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output].Columns[PRODUCT_NAME]"
+                      name="PRODUCT_NAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output].Columns[FAMILY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output].ExternalColumns[FAMILY]"
+                      length="50"
+                      lineageId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output].Columns[FAMILY]"
+                      name="FAMILY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output].ExternalColumns[PRODUCT_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PRODUCT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output].ExternalColumns[PRODUCT_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PRODUCT_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output].ExternalColumns[FAMILY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FAMILY" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Product_Detail_Stagging.Paths[Flat File Source Output]"
+              endId="Package\Product_Detail_Stagging\Product_Detail_Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Product_Detail_Stagging\Product_Detail_Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{EAE27C1F-5E03-488A-9A1A-7FA49AB09C15}"
+      DTS:From="Package\Customer_Detail_Stagging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Customer_Address_Stagging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{042138EB-8AEE-4445-A53D-B7547375E96C}"
+      DTS:From="Package\Customer_Address_Stagging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Product_Detail_Stagging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{8E772861-6D10-4004-9F27-87E2BD08CE0C}"
+      DTS:From="Package\Product_Detail_Stagging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Order_Detail_Stagging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{66F5CA4B-57B9-433C-9F6B-5A0049B190C5}"
+      DTS:From="Package\Order_Detail_Stagging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Execute Tranformation Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{235B962F-8087-4EB5-8564-92DA6635CFBA}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{A9C564F7-B724-4240-8419-68330CEF3FAD}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Customer_Detail SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{67830F64-6F52-48F2-971E-028CC1117F14}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Customer_Detail SQL Task">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{6B30BC25-66B6-462E-B1A4-A6E494961C64}"
+              SQLTask:SqlStatementSource="truncate table [IT18128796_Staging].[dbo].[Customer_Detail_Stagging]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="213.6,41.6"
+          Id="Package\Customer_Address_Stagging"
+          TopLeft="139.428573803026,125.411766464735" />
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package\Customer_Detail_Stagging"
+          TopLeft="142.285716708825,14.6823531470909" />
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\Order_Detail_Stagging"
+          TopLeft="161.714288468264,294.541179928235" />
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\Product_Detail_Stagging"
+          TopLeft="156.000002656664,216.564708919591" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="245.057145255926,56.2823531470909">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69.129413317644"
+              Start="0,0"
+              End="0,61.629413317644">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.629413317644" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="249.514288229845,167.011766464735">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.5529424548561"
+              Start="0,0"
+              End="0,42.0529424548561">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.0529424548561" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="253.457145562464,258.164708919591">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.3764710086439"
+              Start="0,0"
+              End="0,28.8764710086439">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.8764710086439" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="211.2,41.6"
+          Id="Package\Execute Tranformation Task"
+          TopLeft="150.285716845065,386.823533512894" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="255.000002656664,336.141179928235">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.6823535846594"
+              Start="0,0"
+              End="0,43.1823535846594">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.1823535846594" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package.EventHandlers[OnError]\Customer_Detail SQL Task"
+          TopLeft="355.2,67.2" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Customer_Address_Stagging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="224.8,41.6"
+          Id="Package\Customer_Address_Stagging\Customer_Address_Destination"
+          TopLeft="434.4,48" />
+        <NodeLayout
+          Size="204,42.4"
+          Id="Package\Customer_Address_Stagging\Customer_Address_Source"
+          TopLeft="79.2,48" />
+        <EdgeLayout
+          Id="Package\Customer_Address_Stagging.Paths[Excel Source Output]"
+          TopLeft="283.2,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="151.2,0"
+              Start="0,0"
+              End="143.7,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="143.7,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Customer_Address_Stagging.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="218.4,41.6"
+          Id="Package\Customer_Address_Stagging.EventHandlers[OnPreExecute]\Customer_Address_SQL_Task"
+          TopLeft="354.4,78.4" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Customer_Address_Stagging\Customer_Address_Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Customer_Detail_Stagging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="210.4,41.6"
+          Id="Package\Customer_Detail_Stagging\Customer_Detail File Source"
+          TopLeft="39.428572100036,64.8470597329849" />
+        <NodeLayout
+          Size="212,41.6"
+          Id="Package\Customer_Detail_Stagging\Customer_Detail Destination"
+          TopLeft="329.142862748127,66.0705891619092" />
+        <EdgeLayout
+          Id="Package\Customer_Detail_Stagging.Paths[Flat File Source Output]"
+          TopLeft="249.828572100036,86.258824447447">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79.3142906480905,0"
+              Start="0,0"
+              End="71.8142906480905,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="71.8142906480905,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Customer_Detail_Stagging.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Customer_Detail_Stagging.EventHandlers[OnPreExecute]\Execute SQL Task"
+          TopLeft="172.8,78.4" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Customer_Detail_Stagging\Customer_Detail Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Order_Detail_Stagging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="196.8,41.6"
+          Id="Package\Order_Detail_Stagging\Order_Detail_Destination"
+          TopLeft="465.6,92.8" />
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\Order_Detail_Stagging\Order_Detail_Stagging"
+          TopLeft="182.4,96.8" />
+        <EdgeLayout
+          Id="Package\Order_Detail_Stagging.Paths[Excel Source Output]"
+          TopLeft="367.2,115.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98.4000000000001,0"
+              Start="0,0"
+              End="90.9000000000001,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="90.9000000000001,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Order_Detail_Stagging.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Order_Detail_Stagging.EventHandlers[OnPreExecute]\Order_Detail_SQL"
+          TopLeft="364,116" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Order_Detail_Stagging\Order_Detail_Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Order_Detail_Stagging\Order_Detail_Stagging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Product_Detail_Stagging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\Product_Detail_Stagging\Product_Detail_Source"
+          TopLeft="92.8,64.8" />
+        <NodeLayout
+          Size="205.6,41.6"
+          Id="Package\Product_Detail_Stagging\Product_Detail_Destination"
+          TopLeft="419.2,67.2" />
+        <EdgeLayout
+          Id="Package\Product_Detail_Stagging.Paths[Flat File Source Output]"
+          TopLeft="277.6,86.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="141.6,0"
+              Start="0,0"
+              End="134.1,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="134.1,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Product_Detail_Stagging.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\Product_Detail_Stagging.EventHandlers[OnPreExecute]\Product_Detail_SQL_Task"
+          TopLeft="253.6,92.8" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Product_Detail_Stagging\Product_Detail_Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Customer_Address_Stagging\Customer_Address_Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

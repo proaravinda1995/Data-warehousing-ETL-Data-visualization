@@ -1,0 +1,30 @@
+Create Procedure dbo.UpdateProductDetails
+@ProductId int
+@ProductName varchar(255)
+@Family varchar(255)
+as
+Begin
+	if not exists(select ProductId
+			from [IT18128796_DW].[dbo].[DimProductDetail]
+			where AlternativeProductId =@ProductId
+			and ProductName = @ProductName
+			and Family = @Family)
+			
+	begin
+			insert into [IT18128796_DW].[dbo].[DimProductDetail]
+			(AlternativeProductId,ProductName,Family)
+			values
+			(@ProductId,@ProductName,@Family)
+			
+	
+	End;
+End;	
+
+
+
+
+
+Exec dbo.UpdateProductDetails ?,?,?
+	
+	
+	
