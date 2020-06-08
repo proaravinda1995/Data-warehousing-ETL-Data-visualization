@@ -1,9 +1,1 @@
-Intern related to Data warehousing.
-I am a undergraduate in Sri Lanka Institute of information and technology. Currently i am doing data science degree in SLIIT. I am passionate to do job related data warehouse.
- please consider this request.
-
-
-
-Do you have an understanding of Machine Learning concepts / Cloud Technologies / Linux Systems & Network Administration?
-Do you have knowledge in Data modelling/analytics/Database with RDBMS/NOSQL and Big data related technologies (Hadoop, Hive, Impala, Spark, etc)
-Do you have knowledge on database clustering technologies?
+related to Data warehousing.
