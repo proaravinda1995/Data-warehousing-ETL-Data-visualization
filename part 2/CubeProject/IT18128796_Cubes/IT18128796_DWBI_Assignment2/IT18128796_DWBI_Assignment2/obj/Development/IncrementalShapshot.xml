@@ -1,0 +1,82 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>IT18128796_DWBI_Assignment2</Database>
+    <Server>DESKTOP-HUUS7AP\MSSQLSERVERDEV</Server>
+    <ConnectionString>Data Source=DESKTOP-HUUS7AP\MSSQLSERVERDEV;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>K0r/NRRHmknYC7PkWjVYCceap4s=5/10/2020 10:11:01 PM5/10/2020 1:54:58 PM</TimeStamp>
+        <ID>
+          <String>IT18128796 DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>pRJ3bIYp3rs864kZQULJycPGidY=5/10/2020 10:20:16 PM5/10/2020 4:52:57 PM</TimeStamp>
+        <ID>
+          <String>IT18128796 DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>MTEVdIAGSTtOxtXOEj+kL0Ie6Sk=5/10/2020 5:29:05 PM5/10/2020 5:08:08 PM</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>IW6NCqeBjneOD0nP/FL8o3FGsbI=5/10/2020 5:22:53 PM5/10/2020 5:08:08 PM</TimeStamp>
+        <ID>
+          <String>Dim Customer Details</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>3+XF8kqyNdsF0NpeUwR4zLRdtRM=5/10/2020 5:23:46 PM5/10/2020 5:08:08 PM</TimeStamp>
+        <ID>
+          <String>Dim Product Detail</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>P8IDLmo9VK1CbdSa2XYt+4SarLQ=5/11/2020 8:23:51 AM5/10/2020 5:08:08 PMb1O5RfJssYI8mkk/GS+OLyv5EFU=5/10/2020 5:08:08 PM5/10/2020 5:08:08 PM</TimeStamp>
+        <ID>
+          <String>IT18128796 DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Role</Type>
+        <TimeStamp>gW4uyJ/5f7+mqbBRvF93TF8ZcPE=5/10/2020 6:04:51 PM5/10/2020 6:03:50 PM</TimeStamp>
+        <ID>
+          <String>Role</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>dfI4L/CHxeNsfQ+PHA6zLFIIpQI=5/10/2020 6:04:51 PM5/10/2020 1:41:28 PM</TimeStamp>
+      <ID>
+        <String>IT18128796_DWBI_Assignment2</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2020-05-11T02:53:59.126667Z</LastDeployed>
+</DeploymentSnapshot>
